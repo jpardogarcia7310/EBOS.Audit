@@ -1,8 +1,11 @@
 using Asp.Versioning;
 using EBOS.Audit.Application.Services;
 using EBOS.Audit.Application.Services.Queries;
+using EBOS.Audit.Application.Services.Retentions;
 using EBOS.Audit.Infrastructure;
 using EBOS.Audit.Infrastructure.DI;
+using EBOS.Audit.Infrastructure.HostedServices;
+using EBOS.Audit.Infrastructure.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -48,6 +51,11 @@ services.AddAuditInfrastructure(builder.Configuration);
 
 services.AddScoped<AuditQueryService>();
 services.AddScoped<AuditAggregationService>();
+// Retention settings
+services.Configure<AuditRetentionOptions>( 
+    builder.Configuration.GetSection("AuditRetention"));
+services.AddScoped<AuditRetentionService>(); 
+services.AddHostedService<AuditRetentionHostedService>();
 
 var app = builder.Build();
 
