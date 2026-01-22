@@ -47,6 +47,7 @@ services.AddScoped<AuditAppService>();
 services.AddAuditInfrastructure(builder.Configuration);
 
 services.AddScoped<AuditQueryService>();
+services.AddScoped<AuditAggregationService>();
 
 var app = builder.Build();
 
