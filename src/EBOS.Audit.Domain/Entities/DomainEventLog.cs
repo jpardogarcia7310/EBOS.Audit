@@ -4,19 +4,10 @@ namespace EBOS.Audit.Domain.Entities;
 
 public sealed class DomainEventLog : BaseEntity
 {
-    public string SystemName { get; private set; } = null!;
-    public string EventType { get; private set; } = null!;
-    public string EntityName { get; private set; } = null!;
-    public string EntityId { get; private set; } = null!;
+    // EF Core constructor
 
-    public string PayloadJson { get; private set; } = null!;
-    public DateTime OccurredAt { get; private set; }
-    public string TriggeredBy { get; private set; } = null!;
-    public string? CorrelationId { get; private set; }
-
-    private DomainEventLog() { }
-
-    public DomainEventLog(string systemName, string eventType, string entityName, string entityId, string payloadJson,
+    // Constructor privado para creación controlada
+    private DomainEventLog(string systemName, string eventType, string entityName, string entityId, string payloadJson,
         DateTime occurredAt, string triggeredBy, string? correlationId)
     {
         SystemName = systemName;
@@ -28,4 +19,18 @@ public sealed class DomainEventLog : BaseEntity
         TriggeredBy = triggeredBy;
         CorrelationId = correlationId;
     }
+
+    // Factory estática: punto único de creación
+    public static DomainEventLog Create(string systemName, string eventType, string entityName, string entityId,
+        string payloadJson, DateTime occurredAt, string triggeredBy, string? correlationId = null)
+        => new(systemName, eventType, entityName, entityId, payloadJson, occurredAt, triggeredBy, correlationId);
+
+    public string SystemName { get; }
+    public string EventType { get; }
+    public string EntityName { get; }
+    public string EntityId { get; }
+    public string PayloadJson { get; }
+    public DateTime OccurredAt { get; }
+    public string TriggeredBy { get; }
+    public string? CorrelationId { get; }
 }

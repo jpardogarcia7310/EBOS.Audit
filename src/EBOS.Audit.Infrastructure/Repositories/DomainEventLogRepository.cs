@@ -1,7 +1,6 @@
 ﻿using EBOS.Audit.Domain.Entities;
 using EBOS.Audit.Domain.Interfaces.Repositories;
 using EBOS.Audit.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
 
 namespace EBOS.Audit.Infrastructure.Repositories;
 

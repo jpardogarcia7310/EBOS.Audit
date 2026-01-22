@@ -4,21 +4,7 @@ namespace EBOS.Audit.Domain.Entities;
 
 public sealed class ActivityLog : BaseEntity
 {
-    public string SystemName { get; private set; } = null!;
-    public string Action { get; private set; } = null!;
-    public string Description { get; private set; } = null!;
-
-    public string User { get; private set; } = null!;
-    public DateTime Timestamp { get; private set; }
-
-    public string? IpAddress { get; private set; }
-    public string? UserAgent { get; private set; }
-    public string? MetadataJson { get; private set; }
-    public string? CorrelationId { get; private set; }
-
-    private ActivityLog() { }
-
-    public ActivityLog(string systemName, string action, string description, string user, DateTime timestamp,
+    private ActivityLog(string systemName, string action, string description, string user, DateTime timestamp,
         string? ipAddress, string? userAgent, string? metadataJson, string? correlationId)
     {
         SystemName = systemName;
@@ -31,4 +17,19 @@ public sealed class ActivityLog : BaseEntity
         MetadataJson = metadataJson;
         CorrelationId = correlationId;
     }
+
+    public static ActivityLog Create(string systemName, string action, string description, string user,
+        DateTime timestamp, string? ipAddress = null, string? userAgent = null, string? metadataJson = null,
+        string? correlationId = null)
+        => new(systemName, action, description, user, timestamp, ipAddress, userAgent, metadataJson, correlationId);
+
+    public string SystemName { get; }
+    public string Action { get; }
+    public string Description { get; }
+    public string User { get; }
+    public DateTime Timestamp { get; }
+    public string? IpAddress { get; }
+    public string? UserAgent { get; }
+    public string? MetadataJson { get; }
+    public string? CorrelationId { get; }
 }

@@ -1,11 +1,13 @@
-﻿using EBOS.Audit.Application.Contracts.Requests;
+﻿using Asp.Versioning;
+using EBOS.Audit.Application.Contracts.Requests;
 using EBOS.Audit.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EBOS.Audit.Api.Controllers;
 
 [ApiController]
-[Route("api/audit/changes")]
+[ApiVersion(1.0)]
+[Route("api/v{version:apiVersion}/audit/changes")]
 public sealed class AuditChangesController(AuditAppService service) : ControllerBase
 {
     [HttpPost]
@@ -15,3 +17,4 @@ public sealed class AuditChangesController(AuditAppService service) : Controller
         return Accepted();
     }
 }
+

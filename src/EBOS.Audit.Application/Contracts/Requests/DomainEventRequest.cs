@@ -1,14 +1,14 @@
 ﻿namespace EBOS.Audit.Application.Contracts.Requests;
 
-public sealed class DomainEventRequest
+public sealed class DomainEventRequest(string systemName, string eventType, string entityName, string entityId,
+    string payloadJson, DateTime occurredAt, string triggeredBy, string? correlationId)
 {
-    public string SystemName { get; init; } = null!;     // "CRM", "SUP", "WRH", "INV"
-    public string EventType { get; init; } = null!;      // "CustomerCreated", "OrderShipped"
-    public string EntityName { get; init; } = null!;     // "Customer", "Order"
-    public string EntityId { get; init; } = null!;       // string para soportar long, GUID, etc.
-
-    public string PayloadJson { get; init; } = null!;    // snapshot del evento
-    public DateTime OccurredAt { get; init; }            // fecha del evento
-    public string TriggeredBy { get; init; } = null!;    // usuario o sistema
-    public string? CorrelationId { get; init; }          // para agrupar eventos
+    public string SystemName { get; } = systemName;
+    public string EventType { get; } = eventType;
+    public string EntityName { get; } = entityName;
+    public string EntityId { get; } = entityId;
+    public string PayloadJson { get; } = payloadJson;
+    public DateTime OccurredAt { get; } = occurredAt;
+    public string TriggeredBy { get; } = triggeredBy;
+    public string? CorrelationId { get; } = correlationId;
 }
