@@ -1,4 +1,4 @@
-﻿namespace EBOS.Audit.Application.Contracts.Requests;
+﻿namespace EBOS.Audit.Client.Contracts;
 
 public sealed class DomainEventRequest(string systemName, string eventType, string entityName, string entityId,
     string payloadJson, DateTime occurredAt, string triggeredBy, string? correlationId)

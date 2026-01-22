@@ -1,4 +1,4 @@
-﻿namespace EBOS.Audit.Application.Contracts.Requests;
+﻿namespace EBOS.Audit.Client.Contracts;
 
 public sealed class AuditChangeRequest(string systemName, string entityName, string entityId, string propertyName,
     string? oldValue, string? newValue, DateTime changedAt, string changedBy, string? correlationId)

@@ -1,5 +1,6 @@
 using Asp.Versioning;
 using EBOS.Audit.Application.Services;
+using EBOS.Audit.Application.Services.Queries;
 using EBOS.Audit.Infrastructure;
 using EBOS.Audit.Infrastructure.DI;
 
@@ -44,6 +45,8 @@ services.AddScoped<AuditAppService>();
 
 // Infrastructure
 services.AddAuditInfrastructure(builder.Configuration);
+
+services.AddScoped<AuditQueryService>();
 
 var app = builder.Build();
 

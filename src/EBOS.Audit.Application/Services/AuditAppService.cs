@@ -1,4 +1,4 @@
-﻿using EBOS.Audit.Application.Contracts.Requests;
+﻿using EBOS.Audit.Client.Contracts;
 using EBOS.Audit.Domain.Entities;
 using EBOS.Audit.Domain.Interfaces.Repositories;
 

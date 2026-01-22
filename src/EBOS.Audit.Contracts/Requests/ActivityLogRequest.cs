@@ -1,4 +1,4 @@
-﻿namespace EBOS.Audit.Application.Contracts.Requests;
+﻿namespace EBOS.Audit.Client.Contracts;
 
 public sealed class ActivityLogRequest(string systemName, string action, string description, string user,
     DateTime timestamp, string? ipAddress, string? userAgent, string? metadataJson, string? correlationId)

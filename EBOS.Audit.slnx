@@ -4,6 +4,7 @@
     <Project Path="src/EBOS.Audit.API/EBOS.Audit.API.csproj" />
     <Project Path="src/EBOS.Audit.Application/EBOS.Audit.Application.csproj" />
     <Project Path="src/EBOS.Audit.Client/EBOS.Audit.Client.csproj" />
+    <Project Path="src/EBOS.Audit.Contracts/EBOS.Audit.Contracts.csproj" />
     <Project Path="src/EBOS.Audit.Domain/EBOS.Audit.Domain.csproj" />
     <Project Path="src/EBOS.Audit.Infrastructure/EBOS.Audit.Infrastructure.csproj" />
   </Folder>
