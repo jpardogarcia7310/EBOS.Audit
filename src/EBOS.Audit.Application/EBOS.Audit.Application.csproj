@@ -7,10 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Contracts\Requests\" />
       <Folder Include="Contracts\Responses\" />
       <Folder Include="Mappings\" />
-      <Folder Include="Services\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\EBOS.Audit.Domain\EBOS.Audit.Domain.csproj" />
     </ItemGroup>
 
 </Project>
