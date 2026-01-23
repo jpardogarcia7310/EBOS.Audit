@@ -2,7 +2,7 @@
 using EBOS.Audit.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace EBOS.Audit.Application.Services.Queries;
+namespace EBOS.Audit.Infrastructure.Services.Queries;
 
 public sealed class AuditAggregationService(AuditDbContext db)
 {

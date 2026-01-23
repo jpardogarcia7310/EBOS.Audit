@@ -3,7 +3,7 @@ using EBOS.Audit.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
-namespace EBOS.Audit.Application.Services.Retentions;
+namespace EBOS.Audit.Infrastructure.Services.Retentions;
 
 public sealed class AuditRetentionService(AuditDbContext db, IOptions<AuditRetentionOptions> options)
 {

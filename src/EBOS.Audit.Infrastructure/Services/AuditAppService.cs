@@ -2,7 +2,7 @@
 using EBOS.Audit.Domain.Entities;
 using EBOS.Audit.Domain.Interfaces.Repositories;
 
-namespace EBOS.Audit.Application.Services;
+namespace EBOS.Audit.Infrastructure.Services;
 
 public sealed class AuditAppService(IAuditChangeRepository changes, IDomainEventLogRepository events,
     IActivityLogRepository activities)

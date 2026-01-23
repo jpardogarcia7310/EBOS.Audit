@@ -3,7 +3,7 @@ using EBOS.Audit.Contracts.Responses;
 using EBOS.Audit.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace EBOS.Audit.Application.Services.Queries;
+namespace EBOS.Audit.Infrastructure.Services.Queries;
 
 public sealed class AuditQueryService(AuditDbContext db)
 {

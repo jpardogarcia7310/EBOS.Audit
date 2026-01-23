@@ -9,11 +9,6 @@
     <ItemGroup>
       <ProjectReference Include="..\EBOS.Audit.Client\EBOS.Audit.Client.csproj" />
       <ProjectReference Include="..\EBOS.Audit.Domain\EBOS.Audit.Domain.csproj" />
-      <ProjectReference Include="..\EBOS.Audit.Infrastructure\EBOS.Audit.Infrastructure.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Contracts\Requests\" />
     </ItemGroup>
 
 </Project>

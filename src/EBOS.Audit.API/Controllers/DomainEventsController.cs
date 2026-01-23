@@ -1,6 +1,7 @@
 ﻿using Asp.Versioning;
-using EBOS.Audit.Application.Services;
 using EBOS.Audit.Client.Contracts;
+using EBOS.Audit.Infrastructure.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EBOS.Audit.Api.Controllers;
@@ -12,6 +13,7 @@ namespace EBOS.Audit.Api.Controllers;
 [Produces("application/json")]
 public sealed class DomainEventsController(AuditAppService service) : ControllerBase
 {
+    [Authorize(Policy = "AuditWrite")]
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] DomainEventRequest request, CancellationToken ct)
     {

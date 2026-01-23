@@ -1,5 +1,5 @@
 ﻿using EBOS.Audit.Infrastructure.Options;
-using EBOS.Audit.Application.Services.Retentions;
+using EBOS.Audit.Infrastructure.Services.Retentions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;

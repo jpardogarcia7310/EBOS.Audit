@@ -22,7 +22,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\EBOS.Audit.Domain\EBOS.Audit.Domain.csproj" />
       <ProjectReference Include="..\EBOS.Audit.Application\EBOS.Audit.Application.csproj" />
     </ItemGroup>
 
